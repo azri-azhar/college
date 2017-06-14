@@ -1,0 +1,67 @@
+CREATE DATABASE `ssmd` ;
+
+CREATE TABLE `authorization` (
+`username` VARCHAR( 15 ) NOT NULL ,
+`password` VARCHAR( 32 ) NOT NULL ,
+`class` INT NOT NULL ,
+`related_id` INT
+);
+
+CREATE TABLE `lab` (
+`id` INT NOT NULL ,
+`type` VARCHAR( 25 ) NOT NULL ,
+`name` VARCHAR( 25 ) NOT NULL ,
+`quantity` INT NOT NULL ,
+`location` VARCHAR( 25 ) NOT NULL ,
+`description` VARCHAR( 100 ) NOT NULL ,
+PRIMARY KEY ( `id` ) 
+);
+
+CREATE TABLE `student` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`name` VARCHAR( 25 ) NOT NULL ,
+`ic` VARCHAR( 20 ) NOT NULL ,
+`gender` VARCHAR( 10 ) NOT NULL ,
+`race` VARCHAR( 10 ) NOT NULL ,
+`student` ADD `age` INT NOT NULL ,
+`address` VARCHAR( 50 ) NOT NULL ,
+`phone` VARCHAR( 11 ) NOT NULL ,
+`email` VARCHAR( 25 ) NOT NULL ,
+`course` VARCHAR( 30 ) NOT NULL ,
+PRIMARY KEY ( `id` )
+);
+
+CREATE TABLE `exam` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`student_id` INT NOT NULL ,
+`semester` INT NOT NULL ,
+`subject` VARCHAR( 25 ) NOT NULL ,
+`code` VARCHAR( 25 ) NOT NULL ,
+`result` VARCHAR( 20 ) NOT NULL ,
+PRIMARY KEY ( `id` ) ,
+UNIQUE (
+`student_id`
+)
+);
+
+CREATE TABLE `research` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`title` VARCHAR( 25 ) NOT NULL ,
+`field` VARCHAR( 25 ) NOT NULL ,
+`description` VARCHAR( 75 ) NOT NULL ,
+`supervisor` VARCHAR( 25 ) NOT NULL ,
+`fund` DOUBLE NOT NULL ,
+PRIMARY KEY ( `id` )
+);
+
+CREATE TABLE `order` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`by` VARCHAR( 30 ) NOT NULL ,
+`name` VARCHAR( 30 ) NOT NULL ,
+`quantity` INT NOT NULL ,
+`description` VARCHAR( 30 ) NOT NULL ,
+`supplier` VARCHAR( 30 ) NOT NULL ,
+`price` DOUBLE NOT NULL ,
+`paid` DOUBLE NOT NULL ,
+PRIMARY KEY ( `id` )
+);

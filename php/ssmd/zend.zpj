@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<project>
+	<project_entity ID="debugger">
+		<connectionInfo use_defaults="true" tempFilesLocation="C:\Documents and Settings\Mohamad Azri" debug_mode="local" serverHost="http://localhost/" port="10000"/>
+		<breakpoints>
+			<breakpoint fileName="C:\Program Files\Server\xampp\htdocs\ssmd\lab_admin\edit_inventory.php" lineNumber="99" enable="true" condition=""/>
+		</breakpoints>
+		<watches/>
+	</project_entity>
+	<project_entity ID="project_roots">
+		<vfile name="C:\Program Files\Server\xampp\htdocs\ssmd"/>
+	</project_entity>
+	<project_entity ID="bookmarks"/>
+	<project_entity ID="editor_component" selectedEditor="1">
+		<openEditors>
+			<editor fileName="C:\Program Files\Server\xampp\htdocs\ssmd\payment\viewpayment_made.php" caretPosition="172" clone="false" encoding="default"/>
+			<editor fileName="C:\Program Files\Server\xampp\htdocs\ssmd\payment\viewunpaid_payment.php" caretPosition="2668" clone="false" encoding="default"/>
+		</openEditors>
+	</project_entity>
+	<project_entity ID="CVS">
+		<lastArguments>
+			<CVSCommand commandType="update"/>
+			<CVSCommand commandType="commit"/>
+			<CVSCommand commandType="add"/>
+			<CVSCommand commandType="status"/>
+			<CVSCommand commandType="diff"/>
+		</lastArguments>
+	</project_entity>
+</project>
