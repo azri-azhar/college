@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:OrderStatus/wsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="urn:OrderStatus/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="OrderStatus" targetNamespace="urn:OrderStatus/wsdl">
+  <types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:OrderStatus/types" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:OrderStatus/types">
+      <complexType name="getOrderStatus">
+        <sequence>
+          <element name="String_1" type="string" nillable="true"/></sequence></complexType>
+      <complexType name="getOrderStatusResponse">
+        <sequence>
+          <element name="result" type="string" nillable="true"/></sequence></complexType>
+      <element name="getOrderStatus" type="tns:getOrderStatus"/>
+      <element name="getOrderStatusResponse" type="tns:getOrderStatusResponse"/></schema></types>
+  <message name="OrderStatusSEI_getOrderStatus">
+    <part name="parameters" element="ns2:getOrderStatus"/></message>
+  <message name="OrderStatusSEI_getOrderStatusResponse">
+    <part name="result" element="ns2:getOrderStatusResponse"/></message>
+  <portType name="OrderStatusSEI">
+    <operation name="getOrderStatus">
+      <input message="tns:OrderStatusSEI_getOrderStatus"/>
+      <output message="tns:OrderStatusSEI_getOrderStatusResponse"/></operation></portType>
+  <binding name="OrderStatusSEIBinding" type="tns:OrderStatusSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="getOrderStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/></input>
+      <output>
+        <soap:body use="literal"/></output></operation></binding>
+  <service name="OrderStatus">
+    <port name="OrderStatusSEIPort" binding="tns:OrderStatusSEIBinding">
+      <soap:address location="http://azri:8080/eStore-Web/OrderStatus" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"/></port></service></definitions>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MVDData version="1.2">
+    <DesignDocument designVersion="MIDP-2" uidCounter="22">
+        <DesignComponent id="$MobileDevice" typeid="MIDP:$MobileDevice" uid="0"/>
+        <DesignComponent id="$StartPoint" typeid="MIDP:$StartPoint" uid="1">
+            <Property name="targetDisplayable" value="MainMenu"/>
+            <Property name="targetForwardDisplayable"/>
+        </DesignComponent>
+        <DesignComponent id="MainMenu" typeid="MIDP:javax.microedition.lcdui.List" uid="2">
+            <Property name="choiceType" value="IMPLICIT"/>
+            <Property name="selectCommandAction" value="$SelectCommandAction1"/>
+            <Property name="indexBasedSwitch" value="true"/>
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction1"/>
+            </ContainerProperty>
+            <ContainerProperty name="elements">
+                <ContainerPropertyItem value="Midp2ListElementDC1"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="Midp2ListElementDC1" typeid="MIDP:GROUP-org.netbeans.modules.mvd.model.midp2.Midp2ListElementDC" uid="3">
+            <Property name="string" value="STRING:eStore Order Status Checker"/>
+            <Property name="image"/>
+            <Property name="selected" value="false"/>
+            <Property name="commandAction" value="$SelectCaseCommandAction1"/>
+        </DesignComponent>
+        <DesignComponent id="$SelectCaseCommandAction1" typeid="MIDP:SelectCaseCommandAction" uid="4">
+            <Property name="targetDisplayable" value="OrderStatusInput"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionHolder" value="Midp2ListElementDC1"/>
+        </DesignComponent>
+        <DesignComponent id="$SelectCommandAction1" typeid="MIDP:SelectCommandAction" uid="5">
+            <Property name="targetDisplayable"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionOrigin" value="MainMenu"/>
+        </DesignComponent>
+        <DesignComponent id="exitCommand1" typeid="MIDP:javax.microedition.lcdui.Command" uid="6">
+            <Property name="label" value="STRING:Exit"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="EXIT"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction1" typeid="MIDP:CommandAction" uid="7">
+            <Property name="targetDisplayable" value="$MobileDevice"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="exitCommand1"/>
+            <Property name="actionOrigin" value="MainMenu"/>
+        </DesignComponent>
+        <DesignComponent id="Connecting" typeid="MIDP-2:org.netbeans.microedition.lcdui.WaitScreen" uid="8">
+            <Property name="failureAction" value="$InfoScreenAction2"/>
+            <Property name="task" value="getOrderStatus_Task"/>
+            <Property name="text" value="STRING:Getting data from server ..."/>
+            <Property name="nextDisplayableAction" value="$InfoScreenAction1"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="$InfoScreenAction1" typeid="MIDP:$InfoScreenAction" uid="9">
+            <Property name="actionType" value="1"/>
+            <Property name="targetDisplayable" value="OrderStatusOutput"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource"/>
+            <Property name="actionOrigin" value="Connecting"/>
+        </DesignComponent>
+        <DesignComponent id="$InfoScreenAction2" typeid="MIDP:$InfoScreenAction" uid="10">
+            <Property name="actionType" value="2"/>
+            <Property name="targetDisplayable" value="FailureAlert"/>
+            <Property name="targetForwardDisplayable" value="MainMenu"/>
+            <Property name="actionSource"/>
+            <Property name="actionOrigin" value="Connecting"/>
+        </DesignComponent>
+        <DesignComponent id="getOrderStatus_Task" typeid="MIDP-2:org.netbeans.microedition.util.SimpleCancellableTask" uid="11">
+            <Property name="runnableMethodBody" value="// calls end-to-end method and setting result to output screens\ntry {\ncall_getOrderStatus();\n} catch (java.io.IOException ioe) {\n throw new RuntimeException(ioe.getMessage());\n}\nset_getOrderStatus_OutputValues();\n\n"/>
+        </DesignComponent>
+        <DesignComponent id="FailureAlert" typeid="MIDP:javax.microedition.lcdui.Alert" uid="12">
+            <Property name="title" value="STRING:Failure."/>
+            <ContainerProperty name="commands"/>
+            <Property name="string" value="STRING:Communication failed."/>
+            <Property name="timeout" value="-2"/>
+            <Property name="type" value="ERROR"/>
+            <Property name="image"/>
+        </DesignComponent>
+        <DesignComponent id="OrderStatusInput" typeid="MIDP:javax.microedition.lcdui.Form" uid="13">
+            <Property name="title" value="STRING:getOrderStatus"/>
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction2"/>
+                <ContainerPropertyItem value="$CommandAction3"/>
+            </ContainerProperty>
+            <ContainerProperty name="items">
+                <ContainerPropertyItem value="getOrderStatus_string_1_InputItem"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="getOrderStatus_string_1_InputItem" typeid="MIDP:javax.microedition.lcdui.TextField" uid="14">
+            <Property name="label" value="STRING:Please enter your order id:"/>
+            <Property name="string" value="STRING:"/>
+            <Property name="maxSize" value="120"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="backCommand1" typeid="MIDP:javax.microedition.lcdui.Command" uid="15">
+            <Property name="label" value="STRING:Back"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="BACK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction2" typeid="MIDP:CommandAction" uid="16">
+            <Property name="targetDisplayable" value="MainMenu"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="backCommand1"/>
+            <Property name="actionOrigin" value="OrderStatusInput"/>
+        </DesignComponent>
+        <DesignComponent id="okCommand1" typeid="MIDP:javax.microedition.lcdui.Command" uid="17">
+            <Property name="label" value="STRING:Ok"/>
+            <Property name="priority" value="1"/>
+            <Property name="type" value="OK"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction3" typeid="MIDP:CommandAction" uid="18">
+            <Property name="targetDisplayable" value="Connecting"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="okCommand1"/>
+            <Property name="actionOrigin" value="OrderStatusInput"/>
+        </DesignComponent>
+        <DesignComponent id="OrderStatusOutput" typeid="MIDP:javax.microedition.lcdui.Form" uid="19">
+            <Property name="title" value="STRING:getOrderStatus Output"/>
+            <ContainerProperty name="commands">
+                <ContainerPropertyItem value="$CommandAction4"/>
+            </ContainerProperty>
+            <ContainerProperty name="items">
+                <ContainerPropertyItem value="getOrderStatus_OutputItem"/>
+            </ContainerProperty>
+        </DesignComponent>
+        <DesignComponent id="getOrderStatus_OutputItem" typeid="MIDP:javax.microedition.lcdui.StringItem" uid="20">
+            <Property name="label" value="STRING:Your order status: "/>
+            <Property name="text" value="STRING:&lt;Enter Text&gt;"/>
+            <ContainerProperty name="commands"/>
+        </DesignComponent>
+        <DesignComponent id="$CommandAction4" typeid="MIDP:CommandAction" uid="21">
+            <Property name="targetDisplayable" value="MainMenu"/>
+            <Property name="targetForwardDisplayable"/>
+            <Property name="actionSource" value="okCommand1"/>
+            <Property name="actionOrigin" value="OrderStatusOutput"/>
+        </DesignComponent>
+    </DesignDocument>
+    <FlowDocument version="1.1">
+        <Node id="$MobileDevice" location="160,352" order=",$StartPoint,,,,,,,,,$ExitPoint,,,,,"/>
+        <Node id="MainMenu" location="384,352" order="$SelectCaseCommandAction1,$CommandAction1,,,,,,,,,$Default,,,,,"/>
+        <Node id="Connecting" location="992,352" order="$InfoScreenAction1$ActionFlowPort$1,$InfoScreenAction2$ActionFlowPort$2,,,,,,,,,$Default,,,,,"/>
+        <Node id="FailureAlert" location="1296,456" order=",,,,$InfoScreenAction2$Output,$InfoScreenAction2$Input,,,,,$Default,,,,,"/>
+        <Node id="OrderStatusInput" location="688,352" order="$CommandAction2,$CommandAction3,,,,,,,,,$Default,,,,,"/>
+        <Node id="OrderStatusOutput" location="1296,248" order="$CommandAction4,,,,,,,,,,$Default,,,,,"/>
+        <Link id="$StartPoint$ActionLink" path="200,328,344,328"/>
+        <Link id="$SelectCaseCommandAction1$ActionLink" path="424,344,592,344,592,328,648,328"/>
+        <Link id="$CommandAction1$ActionLink" path="424,328,584,328,584,265,47,265,47,328,120,328"/>
+        <Link id="$InfoScreenAction1$ActionLink" path="1032,344,1147,344,1147,224,1256,224"/>
+        <Link id="$InfoScreenAction2$ActionLink" path="1032,328,1115,328,1115,304,1304,304,1304,384"/>
+        <Link id="$CommandAction2$ActionLink" path="728,344,840,344,840,387,298,387,298,328,344,328"/>
+        <Link id="$CommandAction3$ActionLink" path="728,328,952,328"/>
+        <Link id="$CommandAction4$ActionLink" path="1336,240,1394,240,1394,277,298,277,298,328,344,328"/>
+        <Link id="$InfoScreenAction2$ForwardLink" path="1320,384,1320,277,298,277,298,328,344,328"/>
+    </FlowDocument>
+</MVDData>

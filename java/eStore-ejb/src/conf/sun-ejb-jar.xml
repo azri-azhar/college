@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sun-ejb-jar PUBLIC "-//Sun Microsystems, Inc.//DTD Application Server 8.1 EJB 2.1//EN" "http://www.sun.com/software/appserver/dtds/sun-ejb-jar_2_1-1.dtd">
+<sun-ejb-jar>
+  <enterprise-beans>
+    <ejb>
+      <ejb-name>CompanyProcessBean</ejb-name>
+      <jndi-name>ejb/CompanyProcessBean</jndi-name>
+    </ejb>
+    <ejb>
+      <ejb-name>CategoryProcessBean</ejb-name>
+      <jndi-name>ejb/CategoryProcessBean</jndi-name>
+    </ejb>
+    <ejb>
+      <ejb-name>PostageProcessBean</ejb-name>
+      <jndi-name>ejb/PostageProcessBean</jndi-name>
+    </ejb>
+    <ejb>
+      <ejb-name>CustomerProcessBean</ejb-name>
+      <jndi-name>ejb/CustomerProcessBean</jndi-name>
+    </ejb>
+    <ejb>
+      <ejb-name>ProductProcessBean</ejb-name>
+      <jndi-name>ejb/ProductProcessBean</jndi-name>
+      <ejb-ref>
+        <ejb-ref-name>ejb/CategoryProcessBean</ejb-ref-name>
+        <jndi-name>ejb/CategoryProcessBean</jndi-name>
+      </ejb-ref>
+    </ejb>
+    <ejb>
+      <ejb-name>ReviewProcessBean</ejb-name>
+      <jndi-name>ejb/ReviewProcessBean</jndi-name>
+      <ejb-ref>
+        <ejb-ref-name>ejb/CustomerProcessBean</ejb-ref-name>
+        <jndi-name>ejb/CustomerProcessBean</jndi-name>
+      </ejb-ref>
+    </ejb>
+    <ejb>
+      <ejb-name>OrderProcessBean</ejb-name>
+      <jndi-name>ejb/OrderProcessBean</jndi-name>
+      <ejb-ref>
+        <ejb-ref-name>ejb/ProductProcessBean</ejb-ref-name>
+        <jndi-name>ejb/ProductProcessBean</jndi-name>
+      </ejb-ref>
+      <ejb-ref>
+        <ejb-ref-name>ejb/PostageProcessBean</ejb-ref-name>
+        <jndi-name>ejb/PostageProcessBean</jndi-name>
+      </ejb-ref>
+    </ejb>
+    <cmp-resource>
+      <jndi-name>jdbc/mysql</jndi-name>
+    </cmp-resource>
+  </enterprise-beans>
+</sun-ejb-jar>

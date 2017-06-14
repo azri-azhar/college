@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsclientconfig serviceType="jsr-172" version="1.0">
+    <client>
+        <project>eStore-Mobile</project>
+        <class location="${src.dir}" type="org.azri.estore.mobile.OrderStatus"/>
+        <property name="cldc11" value="true"/>
+    </client>
+    <services>
+        <service file="OrderStatus.wsdl" url="http://localhost:8080/eStore-Web/OrderStatus?WSDL"/>
+    </services>
+</wsclientconfig>

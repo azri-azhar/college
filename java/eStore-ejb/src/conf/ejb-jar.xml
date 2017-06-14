@@ -1,0 +1,1225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar version="2.1" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd">
+    <display-name>eStore-EJB</display-name>
+    <enterprise-beans>
+        <session>
+            <display-name>CompanyProcessSB</display-name>
+            <ejb-name>CompanyProcessBean</ejb-name>
+            <home>org.azri.estore.ejb.CompanyProcessRemoteHome</home>
+            <remote>org.azri.estore.ejb.CompanyProcessRemote</remote>
+            <ejb-class>org.azri.estore.ejb.CompanyProcessBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <ejb-local-ref>
+                <ejb-ref-name>ejb/CompanyBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>org.azri.estore.ejb.CompanyLocalHome</local-home>
+                <local>org.azri.estore.ejb.CompanyLocal</local>
+                <ejb-link>CompanyBean</ejb-link>
+            </ejb-local-ref>
+            </session>
+        <session>
+            <display-name>CategoryProcessSB</display-name>
+            <ejb-name>CategoryProcessBean</ejb-name>
+            <home>org.azri.estore.ejb.CategoryProcessRemoteHome</home>
+            <remote>org.azri.estore.ejb.CategoryProcessRemote</remote>
+            <ejb-class>org.azri.estore.ejb.CategoryProcessBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <ejb-local-ref>
+                <ejb-ref-name>ejb/CategoryBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>org.azri.estore.ejb.CategoryLocalHome</local-home>
+                <local>org.azri.estore.ejb.CategoryLocal</local>
+                <ejb-link>CategoryBean</ejb-link>
+            </ejb-local-ref>
+            </session>
+        <session>
+            <display-name>PostageProcessSB</display-name>
+            <ejb-name>PostageProcessBean</ejb-name>
+            <home>org.azri.estore.ejb.PostageProcessRemoteHome</home>
+            <remote>org.azri.estore.ejb.PostageProcessRemote</remote>
+            <ejb-class>org.azri.estore.ejb.PostageProcessBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <ejb-local-ref>
+                <ejb-ref-name>ejb/PostageBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>org.azri.estore.ejb.PostageLocalHome</local-home>
+                <local>org.azri.estore.ejb.PostageLocal</local>
+                <ejb-link>PostageBean</ejb-link>
+            </ejb-local-ref>
+            </session>
+        <session>
+            <display-name>CustomerProcessSB</display-name>
+            <ejb-name>CustomerProcessBean</ejb-name>
+            <home>org.azri.estore.ejb.CustomerProcessRemoteHome</home>
+            <remote>org.azri.estore.ejb.CustomerProcessRemote</remote>
+            <ejb-class>org.azri.estore.ejb.CustomerProcessBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <ejb-local-ref>
+                <ejb-ref-name>ejb/CustomerBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>org.azri.estore.ejb.CustomerLocalHome</local-home>
+                <local>org.azri.estore.ejb.CustomerLocal</local>
+                <ejb-link>CustomerBean</ejb-link>
+            </ejb-local-ref>
+            </session>
+        <session>
+            <display-name>ProductProcessSB</display-name>
+            <ejb-name>ProductProcessBean</ejb-name>
+            <home>org.azri.estore.ejb.ProductProcessRemoteHome</home>
+            <remote>org.azri.estore.ejb.ProductProcessRemote</remote>
+            <ejb-class>org.azri.estore.ejb.ProductProcessBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <ejb-ref>
+                <ejb-ref-name>ejb/CategoryProcessBean</ejb-ref-name>
+                <ejb-ref-type>Session</ejb-ref-type>
+                <home>org.azri.estore.ejb.CategoryProcessRemoteHome</home>
+                <remote>org.azri.estore.ejb.CategoryProcessRemote</remote>
+                <ejb-link>CategoryProcessBean</ejb-link>
+            </ejb-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>ejb/ProductBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>org.azri.estore.ejb.ProductLocalHome</local-home>
+                <local>org.azri.estore.ejb.ProductLocal</local>
+                <ejb-link>ProductBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>ejb/CategoryBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>org.azri.estore.ejb.CategoryLocalHome</local-home>
+                <local>org.azri.estore.ejb.CategoryLocal</local>
+                <ejb-link>CategoryBean</ejb-link>
+            </ejb-local-ref>
+            </session>
+        <session>
+            <display-name>ReviewProcessSB</display-name>
+            <ejb-name>ReviewProcessBean</ejb-name>
+            <home>org.azri.estore.ejb.ReviewProcessRemoteHome</home>
+            <remote>org.azri.estore.ejb.ReviewProcessRemote</remote>
+            <ejb-class>org.azri.estore.ejb.ReviewProcessBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <ejb-ref>
+                <ejb-ref-name>ejb/CustomerProcessBean</ejb-ref-name>
+                <ejb-ref-type>Session</ejb-ref-type>
+                <home>org.azri.estore.ejb.CustomerProcessRemoteHome</home>
+                <remote>org.azri.estore.ejb.CustomerProcessRemote</remote>
+                <ejb-link>CustomerProcessBean</ejb-link>
+            </ejb-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>ejb/ReviewBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>org.azri.estore.ejb.ReviewLocalHome</local-home>
+                <local>org.azri.estore.ejb.ReviewLocal</local>
+                <ejb-link>ReviewBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>ejb/OderBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>org.azri.estore.ejb.OderLocalHome</local-home>
+                <local>org.azri.estore.ejb.OderLocal</local>
+                <ejb-link>OderBean</ejb-link>
+            </ejb-local-ref>
+            </session>
+        <session>
+            <display-name>OrderProcessSB</display-name>
+            <ejb-name>OrderProcessBean</ejb-name>
+            <home>org.azri.estore.ejb.OrderProcessRemoteHome</home>
+            <remote>org.azri.estore.ejb.OrderProcessRemote</remote>
+            <ejb-class>org.azri.estore.ejb.OrderProcessBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+            <ejb-ref>
+                <ejb-ref-name>ejb/ProductProcessBean</ejb-ref-name>
+                <ejb-ref-type>Session</ejb-ref-type>
+                <home>org.azri.estore.ejb.ProductProcessRemoteHome</home>
+                <remote>org.azri.estore.ejb.ProductProcessRemote</remote>
+                <ejb-link>ProductProcessBean</ejb-link>
+            </ejb-ref>
+            <ejb-ref>
+                <ejb-ref-name>ejb/PostageProcessBean</ejb-ref-name>
+                <ejb-ref-type>Session</ejb-ref-type>
+                <home>org.azri.estore.ejb.PostageProcessRemoteHome</home>
+                <remote>org.azri.estore.ejb.PostageProcessRemote</remote>
+                <ejb-link>PostageProcessBean</ejb-link>
+            </ejb-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>ejb/OderBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>org.azri.estore.ejb.OderLocalHome</local-home>
+                <local>org.azri.estore.ejb.OderLocal</local>
+                <ejb-link>OderBean</ejb-link>
+            </ejb-local-ref>
+            <ejb-local-ref>
+                <ejb-ref-name>ejb/ProductBean</ejb-ref-name>
+                <ejb-ref-type>Entity</ejb-ref-type>
+                <local-home>org.azri.estore.ejb.ProductLocalHome</local-home>
+                <local>org.azri.estore.ejb.ProductLocal</local>
+                <ejb-link>ProductBean</ejb-link>
+            </ejb-local-ref>
+            </session>
+        <entity>
+            <description>jdbc:mysql://localhost/azri [root on Default schema]</description>
+            <display-name>ProductEB</display-name>
+            <ejb-name>ProductBean</ejb-name>
+            <local-home>org.azri.estore.ejb.ProductLocalHome</local-home>
+            <local>org.azri.estore.ejb.ProductLocal</local>
+            <ejb-class>org.azri.estore.ejb.ProductBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Product</abstract-schema-name>
+            <cmp-field>
+                <field-name>id</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>name</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>price</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>quantity</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>weight</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>dimension</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>brand</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>details</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>description</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>image</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>categoryId</field-name>
+            </cmp-field>
+            <primkey-field>id</primkey-field>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findById</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Product AS p WHERE p.id = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Product AS p WHERE p.name = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByPrice</method-name>
+                    <method-params>
+                        <method-param>java.lang.Double</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Product AS p WHERE p.price = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByQuantity</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Product AS p WHERE p.quantity = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByWeight</method-name>
+                    <method-params>
+                        <method-param>java.lang.Double</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Product AS p WHERE p.weight = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByDimension</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Product AS p WHERE p.dimension = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByBrand</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Product AS p WHERE p.brand = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByDetails</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Product AS p WHERE p.details = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByDescription</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Product AS p WHERE p.description = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByImage</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Product AS p WHERE p.image = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByCategoryId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Product AS p WHERE p.categoryId = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findAllProduct</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) 
+FROM Product o</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost/azri [root on Default schema]</description>
+            <display-name>CategoryEB</display-name>
+            <ejb-name>CategoryBean</ejb-name>
+            <local-home>org.azri.estore.ejb.CategoryLocalHome</local-home>
+            <local>org.azri.estore.ejb.CategoryLocal</local>
+            <ejb-class>org.azri.estore.ejb.CategoryBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Category</abstract-schema-name>
+            <cmp-field>
+                <field-name>id</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>name</field-name>
+            </cmp-field>
+            <primkey-field>id</primkey-field>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findById</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Category AS c WHERE c.id = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Category AS c WHERE c.name = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findAllCategory</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) 
+FROM Category o</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost/azri [root on Default schema]</description>
+            <display-name>CustomerEB</display-name>
+            <ejb-name>CustomerBean</ejb-name>
+            <local-home>org.azri.estore.ejb.CustomerLocalHome</local-home>
+            <local>org.azri.estore.ejb.CustomerLocal</local>
+            <ejb-class>org.azri.estore.ejb.CustomerBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Customer</abstract-schema-name>
+            <cmp-field>
+                <field-name>id</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>username</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>password</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>firstName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>lastName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>ic</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>email</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>phone</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>address</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>city</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>state</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>zip</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>country</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>shippingName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>shippingAddress</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>shippingCity</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>shippingState</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>shippingZip</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>shippingCountry</field-name>
+            </cmp-field>
+            <primkey-field>id</primkey-field>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findById</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.id = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByUsername</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.username = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByPassword</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.password = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByFirstName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.firstName = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByLastName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.lastName = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByIc</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.ic = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByEmail</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.email = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByPhone</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.phone = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByAddress</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.address = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByCity</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.city = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByState</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.state = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByZip</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.zip = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByCountry</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.country = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByShippingName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.shippingName = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByShippingAddress</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.shippingAddress = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByShippingCity</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.shippingCity = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByShippingState</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.shippingState = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByShippingZip</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.shippingZip = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByShippingCountry</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Customer AS c WHERE c.shippingCountry = ?1</ejb-ql>
+            </query>
+        </entity>
+        <entity>
+            <description>jdbc:mysql://localhost/azri [root on Default schema]</description>
+            <display-name>PostageEB</display-name>
+            <ejb-name>PostageBean</ejb-name>
+            <local-home>org.azri.estore.ejb.PostageLocalHome</local-home>
+            <local>org.azri.estore.ejb.PostageLocal</local>
+            <ejb-class>org.azri.estore.ejb.PostageBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Postage</abstract-schema-name>
+            <cmp-field>
+                <field-name>id</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>location</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>rate</field-name>
+            </cmp-field>
+            <primkey-field>id</primkey-field>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findById</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Postage AS p WHERE p.id = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByLocation</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Postage AS p WHERE p.location = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByRate</method-name>
+                    <method-params>
+                        <method-param>java.lang.Double</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(p) FROM Postage AS p WHERE p.rate = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findAllPostage</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) 
+FROM Postage o</ejb-ql>
+            </query>
+            </entity>
+        <entity>
+            <description>jdbc:mysql://localhost/azri [root on Default schema]</description>
+            <display-name>ReviewEB</display-name>
+            <ejb-name>ReviewBean</ejb-name>
+            <local-home>org.azri.estore.ejb.ReviewLocalHome</local-home>
+            <local>org.azri.estore.ejb.ReviewLocal</local>
+            <ejb-class>org.azri.estore.ejb.ReviewBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Review</abstract-schema-name>
+            <cmp-field>
+                <field-name>id</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>review</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>rating</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>productId</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>customerId</field-name>
+            </cmp-field>
+            <primkey-field>id</primkey-field>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findById</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Review AS r WHERE r.id = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByReview</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Review AS r WHERE r.review = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByRating</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Review AS r WHERE r.rating = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByProductId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Review AS r WHERE r.productId = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByCustomerId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(r) FROM Review AS r WHERE r.customerId = ?1</ejb-ql>
+            </query>
+        </entity>
+        <entity>
+            <description>jdbc:mysql://localhost/azri [root on Default schema]</description>
+            <display-name>CompanyEB</display-name>
+            <ejb-name>CompanyBean</ejb-name>
+            <local-home>org.azri.estore.ejb.CompanyLocalHome</local-home>
+            <local>org.azri.estore.ejb.CompanyLocal</local>
+            <ejb-class>org.azri.estore.ejb.CompanyBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Company</abstract-schema-name>
+            <cmp-field>
+                <field-name>id</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>username</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>password</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>companyName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>address</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>city</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>state</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>zip</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>country</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>contactName</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>email</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>phone</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>title</field-name>
+            </cmp-field>
+            <primkey-field>id</primkey-field>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findById</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.id = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByUsername</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.username = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByPassword</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.password = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByCompanyName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.companyName = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByAddress</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.address = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByCity</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.city = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByState</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.state = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByZip</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.zip = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByCountry</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.country = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByContactName</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.contactName = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByEmail</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.email = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByPhone</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.phone = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByTitle</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(c) FROM Company AS c WHERE c.title = ?1</ejb-ql>
+            </query>
+        </entity>
+        <entity>
+            <display-name>OderEB</display-name>
+            <ejb-name>OderBean</ejb-name>
+            <local-home>org.azri.estore.ejb.OderLocalHome</local-home>
+            <local>org.azri.estore.ejb.OderLocal</local>
+            <ejb-class>org.azri.estore.ejb.OderBean</ejb-class>
+            <persistence-type>Container</persistence-type>
+            <prim-key-class>java.lang.String</prim-key-class>
+            <reentrant>false</reentrant>
+            <abstract-schema-name>Oder</abstract-schema-name>
+            <cmp-field>
+                <field-name>id</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>quantity</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>price</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>day</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>month</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>year</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>status</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>productId</field-name>
+            </cmp-field>
+            <cmp-field>
+                <field-name>customerId</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>postageId</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>totalShipping</field-name>
+            </cmp-field>
+            <cmp-field>
+                <description/>
+                <field-name>totalWeight</field-name>
+            </cmp-field>
+            <primkey-field>id</primkey-field>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findById</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) FROM Oder AS o WHERE o.id = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByQuantity</method-name>
+                    <method-params>
+                        <method-param>java.lang.Integer</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) FROM Oder AS o WHERE o.quantity = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByPrice</method-name>
+                    <method-params>
+                        <method-param>java.lang.Double</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) FROM Oder AS o WHERE o.price = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByDay</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) FROM Oder AS o WHERE o.day = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByMonth</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) FROM Oder AS o WHERE o.month = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByYear</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) FROM Oder AS o WHERE o.year = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByStatus</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) FROM Oder AS o WHERE o.status = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByProductId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) FROM Oder AS o WHERE o.productId = ?1</ejb-ql>
+            </query>
+            <query>
+                <description>auto generated method</description>
+                <query-method>
+                    <method-name>findByCustomerId</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) FROM Oder AS o WHERE o.customerId = ?1</ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByProductReceived</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) FROM Oder o WHERE o.productId = ?1 AND o.customerId = ?2 AND o.status = 'Received' </ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByProductInCart</method-name>
+                    <method-params>
+                        <method-param>java.lang.String</method-param>
+                    </method-params>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) FROM Oder o WHERE o.customerId = ?1 AND o.status = 'Cart' </ejb-ql>
+            </query>
+            <query>
+                <query-method>
+                    <method-name>findByOtherStatus</method-name>
+                    <method-params/>
+                </query-method>
+                <ejb-ql>SELECT OBJECT(o) FROM Oder o WHERE o.status NOT LIKE 'Processing' AND o.status NOT LIKE 'Cart' AND o.status NOT LIKE 'Delivered' AND o.status NOT LIKE 'Awaiting for payment'</ejb-ql>
+            </query>
+            </entity>
+        </enterprise-beans>
+    <assembly-descriptor>
+        <container-transaction>
+            <method>
+                <ejb-name>ProductBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>CategoryBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>CustomerBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>PostageBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>ReviewBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>CompanyBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>CompanyProcessBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>CategoryProcessBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>PostageProcessBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>CustomerProcessBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>ProductProcessBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>ReviewProcessBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>OrderProcessBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        <container-transaction>
+            <method>
+                <ejb-name>OderBean</ejb-name>
+                <method-name>*</method-name>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+        </assembly-descriptor>
+    </ejb-jar>

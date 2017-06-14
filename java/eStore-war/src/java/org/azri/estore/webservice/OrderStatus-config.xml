@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<configuration xmlns='http://java.sun.com/xml/ns/jax-rpc/ri/config'>
+	<service name='OrderStatus' targetNamespace='urn:OrderStatus/wsdl' typeNamespace='urn:OrderStatus/types' packageName='org.azri.estore.webservice'>
+		<interface name='org.azri.estore.webservice.OrderStatusSEI' servantName='org.azri.estore.webservice.OrderStatusImpl'>
+		</interface>
+	</service>
+</configuration>
